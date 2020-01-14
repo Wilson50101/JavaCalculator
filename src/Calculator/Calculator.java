@@ -5,12 +5,12 @@ import java.awt.event.*;
 import java.util.*;
 
 public class Calculator extends Frame implements ActionListener
-{	  
+{	
 		private Panel pnlNumber = new Panel(new GridLayout(4,3));
-		static Label lab = new Label("0. ", Label.RIGHT);
-		static Panel pnlOperator = new Panel(new GridLayout(4,1));
-		static private LinkedList buttons = new LinkedList<Button>();
-		static private LinkedList buttonType = new LinkedList<Integer>();
+		private Label lab = new Label("0. ", Label.RIGHT);
+		private Panel pnlOperator = new Panel(new GridLayout(4,1));
+		private LinkedList buttons = new LinkedList<Button>();
+		private LinkedList buttonType = new LinkedList<Integer>();
 	   public Calculator()
 	   {
 		   
@@ -138,7 +138,7 @@ public class Calculator extends Frame implements ActionListener
       }
    }
    
-   private static void initialButtons()
+   private void initialButtons()
    {
 	   buttons.add(new Button("1"));
 	   buttonType.add(0);
