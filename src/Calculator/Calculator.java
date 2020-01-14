@@ -1,25 +1,25 @@
 package Calculator;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 
 public class Calculator extends Frame implements ActionListener
-{	  static Calculator frm = new Calculator();
-	  static Panel pnlNumber = new Panel(new GridLayout(4,3));
-	  static Label lab = new Label("0. ", Label.RIGHT);
-      static Panel pnlOperator = new Panel(new GridLayout(4,1));
-      static Button btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn0,btn10,btn11,btn12,btn13,btn14,btn15,btn16,btn17,btn18,btn19,btn20;
-      static private LinkedList buttons = new LinkedList<Button>();
-      static private LinkedList buttonType = new LinkedList<Integer>();
-      
-	   public static void main(String args[])
+{	  
+		private Panel pnlNumber = new Panel(new GridLayout(4,3));
+		static Label lab = new Label("0. ", Label.RIGHT);
+		static Panel pnlOperator = new Panel(new GridLayout(4,1));
+		static private LinkedList buttons = new LinkedList<Button>();
+		static private LinkedList buttonType = new LinkedList<Integer>();
+	   public Calculator()
 	   {
-	      frm.setTitle("計算機");
-	      frm.setLayout(null);
-	      frm.setSize(300, 200);
-		   frm.setLocation(100, 100);
-		   frm.setBackground(Color.white);
-		   frm.setResizable(false);
+		   
+	      this.setTitle("計算機");
+	      this.setLayout(null);
+	      this.setSize(300, 200);
+	      this.setLocation(100, 100);
+	      this.setBackground(Color.white);
+	      this.setResizable(false);
 
 		   lab.setBounds(20, 30, 200, 20);
 		   lab.setBackground(new Color(240, 220, 190));
@@ -46,15 +46,15 @@ public class Calculator extends Frame implements ActionListener
         		 pnlNumber.add(btn);
         		 break;
         	 }
-        	 btn.addActionListener(frm);
+        	 btn.addActionListener(this);
          }
            
          //加到frm
-		   frm.add(lab);
-		   frm.add(pnlNumber);
-         frm.add(pnlOperator);
-		   frm.setVisible(true);
-		   frm.addWindowListener(new WindowAdapter(){
+         this.add(lab);
+         this.add(pnlNumber);
+         this.add(pnlOperator);
+         this.setVisible(true);
+         this.addWindowListener(new WindowAdapter(){
 			   public void windowClosing(WindowEvent e) {System.exit(0);}});
 
       }
@@ -183,4 +183,8 @@ public class Calculator extends Frame implements ActionListener
 	   buttons.add(new Button("1/x"));
 	   buttonType.add(1);
    }
+   public static void main(String[] args) 
+	{
+		Calculator calculatorAPP=new Calculator();
+	}
 }
