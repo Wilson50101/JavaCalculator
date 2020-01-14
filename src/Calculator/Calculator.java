@@ -183,8 +183,4 @@ public class Calculator extends Frame implements ActionListener
 	   buttons.add(new Button("1/x"));
 	   buttonType.add(1);
    }
-   public static void main(String[] args) 
-	{
-		Calculator calculatorAPP=new Calculator();
-	}
 }
